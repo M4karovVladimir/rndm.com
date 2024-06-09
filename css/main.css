@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: #ebeed4;
+}
+
+.logo {
+  cursor: pointer;
+  height: auto;
+  width: 50px;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.container {
+  width: 900px;
+  display: flex;
+  padding: 10px;
+  z-index: 1;
+  position: relative; 
+  overflow-x:scroll ;
+}
+
+.container .gallery {
+  display: grid;
+  grid-template-columns: auto auto auto; 
+  grid-gap: 20px;
+  width: 100%;
+  flex:none;
+}
+
+.container .gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.container::-webkit-scrollbar{
+  display: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10% auto;
+}
+
+.controls #rigtnBtn, .controls #leftBtn{
+  width: 70px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+
+.text-container {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 20px;
+  z-index: 1;
+  color: white;
+  font-size: 50px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.scrolling-wrapper .card {
+  display: inline-block;
+}
+
+.nav__links a,
+.cta,
+.overlay__content a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #030303;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #0088a9;
+}
+
+.cta {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #752dc7;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+.text-container1{
+  text-align: center;
+  color: white;
+  font-size: 60px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+  color: rgb(255, 255, 255);
+}
+
+.list-wrapper {
+  background-image: url(/images/palma2.jpg);
+  padding: 5px;
+  border-radius: 10px;
+  width: 600px;
+  font-size: 50px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+      font-size: 20px;
+  }
+  .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+      display: none;
+  }
+  .menu {
+      display: initial;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 5%;
+  }
+  
+  .logo {
+      width: 40px;
+  }
+  
+  .nav__links {
+      flex-direction: column;
+      width: 100%;
+  }
+  
+  .nav__links li {
+      padding: 10px 0;
+  }
+  
+  .menu {
+      align-self: flex-end;
+  }
+  
+  .cta {
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+    <script src="/js/slide.js" defer></script>
+</head>
+<body>
+    <header>
+        <a class="logo" href="/">
+            <img src="/images/logoza.ru-Photoroom.png" alt="logo">
+        </a>
+        <nav>
+            <ul class="nav__links">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="#">Contact</a>
+        <p class="menu cta">Menu</p>
+    </header>
+    <div class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="#">Services</a>
+            <a href="#">Projects</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+    <a class="background" href="/">
+        <img src="/images/GettyImages-175864540.webp" alt="background">
+    </a>
+   
+   
+    <div class="text-container"> 
+        <p>Добро пожаловать в роскошный отель «Пляжный рай», где каждый гость окружен заботой и вниманием. Наш отель расположен в идиллическом месте, с видом на живописные пейзажи и роскошные сады. У нас вы найдете изысканные номера, рестораны с изысканной кухней, спа-центр и множество развлекательных программ. Отель «Пляжный рай» - идеальное место для релаксации и уюта, где каждая деталь создана для вашего комфорта и удовольствия."
+        </p>
+
+        <div class="controls">
+            <img src="/images/levo.png" alt="levo"  id="leftBtn">
+            <div class="container">
+                <div class="gallery">
+                    <span><img src="/images/luxs.jpg"></span>
+                    <span><img src="/images/suite-1.jpg"></span>
+                    <span><img src="/images/standart.jpg"></span>
+                </div>
+                <div class="gallery">
+                    <span><img src="/images/invalid.jpg"></span>
+                    <span><img src="/images/eco.jpg"></span>
+                    <span><img src="/images/family.png"></span>
+                </div>
+            </div>
+            <img src="/images/scrollarrowtoright_83712.png" alt="right" id="rigtnBtn">
+        </div>
+
+
+      
+   
+    </div>
+    <script type="text/javascript" src="/js/script.js"></script>
+   
+    <script>
+        let horizontalScroll = document.querySelector(".container");
+        let leftBtn = document.getElementById("leftBtn");
+        let rigtnBtn = document.getElementById("rigtnBtn");
+
+        rigtnBtn.addEventListener('click', ()=>{
+            horizontalScroll.scrollLeft += 900;
+        });
+
+        leftBtn.addEventListener('click', ()=>{
+            horizontalScroll.scrollLeft -= 900;
+        });
+
+    
+    </script>
+
+</body>
+</html>
